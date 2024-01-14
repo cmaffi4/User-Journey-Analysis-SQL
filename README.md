@@ -4,7 +4,7 @@ The goal of this project was to write up a query to extract data for a subsequen
 
 The final output includes crucial business information such as user_id, session_id, subscription_type and user_journey.
 
-SQL is often just used to fetch raw data from data storage that is later transferred to other software for preprocessing. But this programming language can do more than select data from a table. Sometimes, aggregating or preprocessing data in SQL directly might be easier or more beneficial—precisely the purpose of this project. This Extracting User Journey Data with SQL project centers around creating a customer journey data extract as the starting point for later analysis. Here, “user journey” refers to the steps each user goes through while exploring the product or platform before purchasing. The context is an online subscription-based company offering monthly, quarterly, and annual subscription plans.
+Sometimes, aggregating or preprocessing data in SQL directly might be easier or more beneficial—precisely the purpose of this project. This Extracting User Journey Data with SQL project centers around creating a customer journey data extract as the starting point for later analysis. Here, “user journey” refers to the steps each user goes through while exploring the product or platform before purchasing. The context is an online subscription-based company offering monthly, quarterly, and annual subscription plans.
 
 # Project files
 
@@ -21,7 +21,7 @@ The front_interactions  table records all visitor activity on the company’s fr
 
 This table records all events on the front pages—from scrolling to clicking on buttons. The significant aspect regarding this project is that it also records the source and destination URLs for every event. These are the same for such interactions as scrolling or clicking on a form field. But when a visitor clicks on a page link, these two URLs would differ since they moved to a different page.
 
-The next table is student_purchases which contains records of user payments and the type of product they purchased. This includes all payments even if they are subsequent recurring payments for the same subscription. Its columns contain the following:
+The next table was student_purchases, which contains records of user payments and the type of product they purchased. This includes all payments even if they are subsequent recurring payments for the same subscription. Its columns contain the following:
 
 - user_id   – (int) the ID of the user, different from the visitor_id
 - purchase_id   – (int) the ID of the purchase
@@ -29,9 +29,9 @@ The next table is student_purchases which contains records of user payments and 
 - purchase_price   – (decimal) the price the user paid in dollars
 - date_purchased   – (datetime) the exact datetime of the purchase
 
-Notice that since the person needs to have purchased a product to be in this table and has an account, they are no longer considered a visitor but a user. It’s also noteworthy that the purchase price in this table can be used as an indicator for test users. If a user has purchased a product at $0, they’re probably just a test one.
+Notice that since the person needs to have purchased a product to be in this table and has an account, they are no longer considered as visitor, but user. It’s also noteworthy that the purchase price in this table can be used as an indicator for test users. If a user has purchased a product at $0, they’re probably just a test one.
 
-The final table front_visitors  is the link between front_interactions and student_purchases. There are only two columns in this table:
+The final table front_visitors was the link between front_interactions and student_purchases. There were only two columns in this table:
 
 - visitor_id   – (int) the ID of the visitor—each record has this field filled in
 - user_id   – (int) the ID of the user corresponding to this visitor—many NULL values here because many visitors never made an account and so were never assigned a user_id
