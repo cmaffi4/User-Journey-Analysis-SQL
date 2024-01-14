@@ -1,6 +1,6 @@
 # Extracting User Journey Data Using SQL
 
-The goal of this project was to write up a query to extract data for a subsequent user journey analysis. The idea is that someone in my company wants to analyze the sequence of pages visited leading to a purchase. For that purpose, I needed to group all the pages visited in a session into one string. I extracted the user journey of only those that have purchased a subscription plan. Moreover, I considered users that made their first purchase between January 1, 2023, and March 31, 2023, inclusive (i.e., Q1 2023).
+The goal of this project was to write up a query to extract data for a subsequent user journey analysis. The idea is that someone in a company wants to analyze the sequence of pages visited leading to a purchase. For that purpose, I needed to group all the pages visited in a session into one string. I extracted the user journey of only those that have purchased a subscription plan. Moreover, I considered users that made their first purchase between January 1, 2023, and March 31, 2023, inclusive (i.e., Q1 2023).
 
 The final output includes crucial business information such as user_id, session_id, subscription_type and user_journey.
 
